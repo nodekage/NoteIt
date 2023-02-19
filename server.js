@@ -7,6 +7,17 @@ const app = express()
 
 require('./db/mongoDb').connectToMongoDB()
 
+const authRoute = require('./routes/auth')
+const noteRoute = require('./routes/notes')
+
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
+
+
+app.use('/api/v1/auth', authRoute)
+app.use('/api/v1/notes', noteRoute)
+
 
 app.get("/", (req, res) => {
     res.send({
