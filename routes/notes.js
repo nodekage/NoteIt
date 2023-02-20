@@ -4,24 +4,24 @@ const { verify } = require('../validators/jwtverify.validator')
 
 
 
-// CREATE POST
+// CREATE NOTE
 router.post('/create', verify, noteController.createNote)
 
 
 
-// UPDATE POST
+// UPDATE NOTE
 router.put('/:id',verify, noteController.updateNoteByID)
 
 
-// DELETE POST
+// DELETE NOTE
 router.delete('/:id',verify, noteController.deleteNoteByID)
 
 
-// GET POST BY ID
+// GET NOTE BY ID
 router.get('/:id', noteController.GetNoteByID)
 
 
-// GET ALL POSTS
+// GET ALL NOTES
 router.get('/', noteController.GetAllNotes)
 
 
