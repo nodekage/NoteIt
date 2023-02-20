@@ -35,7 +35,7 @@ async function UpdateUserByID(req, res) {
 
 
 async function DeleteUserByID(req, res) {
-    if (req.body.id === req.params.id) {
+    if (req.body.userId === req.params.id) {
         try {
             const user = await User.findById(req.params.id)
             try {
