@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require("cors")
 const CONFIG = require("./config/config")
 const app = express()
 
@@ -11,6 +12,9 @@ const userRoute = require('./routes/users')
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
+app.use (cors({
+    origin : '*'
+}))
 
 
 app.use('/api/v1/auth', authRoute)
